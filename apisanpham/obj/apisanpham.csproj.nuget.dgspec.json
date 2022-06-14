@@ -1,29 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ltw\\api_sanpham\\apisanpham\\apisanpham\\apisanpham.csproj": {}
+    "D:\\DULIEUHOCTAP\\ki6\\CongNghePM\\ChuaDoAn\\doancuoiapi\\api\\apisanpham\\apisanpham.csproj": {}
   },
   "projects": {
-    "D:\\ltw\\api_sanpham\\apisanpham\\apisanpham\\apisanpham.csproj": {
+    "D:\\DULIEUHOCTAP\\ki6\\CongNghePM\\ChuaDoAn\\doancuoiapi\\api\\apisanpham\\apisanpham.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ltw\\api_sanpham\\apisanpham\\apisanpham\\apisanpham.csproj",
+        "projectUniqueName": "D:\\DULIEUHOCTAP\\ki6\\CongNghePM\\ChuaDoAn\\doancuoiapi\\api\\apisanpham\\apisanpham.csproj",
         "projectName": "apisanpham",
-        "projectPath": "D:\\ltw\\api_sanpham\\apisanpham\\apisanpham\\apisanpham.csproj",
+        "projectPath": "D:\\DULIEUHOCTAP\\ki6\\CongNghePM\\ChuaDoAn\\doancuoiapi\\api\\apisanpham\\apisanpham.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\ltw\\api_sanpham\\apisanpham\\apisanpham\\obj\\",
+        "outputPath": "D:\\DULIEUHOCTAP\\ki6\\CongNghePM\\ChuaDoAn\\doancuoiapi\\api\\apisanpham\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://packagesource": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://www.nuget.org/api/v2/": {},
+          "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/": {}
         },
         "frameworks": {
           "net5.0": {
@@ -76,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

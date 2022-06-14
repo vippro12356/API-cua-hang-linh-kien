@@ -7,7 +7,7 @@ namespace apisanpham.services
 {
     public class connect
     {
-        public string connectionString = "Data Source=.;Initial Catalog=sanpham;Integrated Security=true";
+        public string connectionString = "Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=QL_CUAHANGLINHKIENMAYTINH;Integrated Security=true";
         public string connmongo= "mongodb://localhost:27017/admin";
     }
 }
