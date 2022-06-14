@@ -115,7 +115,7 @@ namespace apisanpham.services
         {
             int iddh = taodondh(ddh);
             themctdh(ddh.Sanpham, iddh);
-            //sendemail(ddh.Email);
+            sendemail(ddh.Email,ddh,iddh);
         }
         public int taodondh(Dondathang ddh)
         {
