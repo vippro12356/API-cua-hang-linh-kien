@@ -115,7 +115,7 @@ namespace apisanpham.services
         {
             int iddh = taodondh(ddh);
             themctdh(ddh.Sanpham, iddh);
-            sendemail(ddh.Email);
+            //sendemail(ddh.Email);
         }
         public int taodondh(Dondathang ddh)
         {
@@ -156,7 +156,7 @@ namespace apisanpham.services
                 bulk.WriteToServer(dt);
             }
         }
-        public void sendemail(string emailaddress)
+        public void sendemail(string emailaddress,Dondathang ddh,int id_dh)
         {
             if(emailaddress.Length==0)
             {
@@ -185,8 +185,21 @@ namespace apisanpham.services
                     {
                         From = fromemail,
                         Subject = "chúc mừng bạn đặt hàng thành công",
-                        Body = "đặt thành công",
+                        IsBodyHtml = true,                                   
                     };
+                    mess.Body += "<h1>Xin chào:" + ddh.Hoten + "</h1>";
+                    mess.Body += "<h3>Đơn hàng của bạn đã đặt thành công<h3>";
+                    mess.Body += "<h3>Mã đơn hàng của bạn:" + id_dh.ToString() + "</h3>";
+                    mess.Body += "<h3>Danh sách các mặt hàng đã đặt</h3>";
+                    mess.Body += "<table><thead>";
+                    mess.Body += "<tr><th>Mã sản phẩm</th><th>Tên sản phẩm</th><th>Số lượng</th><th>Đơn giá</th></thead>";
+                    mess.Body += "<tbody>";
+                    foreach (var item in ddh.Sanpham)
+                    {
+                        mess.Body += "<tr><td>" + item.id.ToString() + "</td>" + "<td>" + item.pro_name + "</td>" + "<td>" + item.amount.ToString() + "</td>" + "<td>" + item.price.ToString() + "Đ</td></tr>";
+                    }
+                    mess.Body += "</tbody></table>";
+                    mess.Body += "<h4>Tổng tiền:" + ddh.Tongtien.ToString() + "Đ</h4>";
                     mess.To.Add(toemail);
                     client.Send(mess);
                 }
