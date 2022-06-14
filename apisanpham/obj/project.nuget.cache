@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FrENxNhjgos7V8V1ms0GA1tj1Gez34TuOTnK6K7xhClUWRtLWEkpAFF/BqZBimBRe/pyb0prYMdbgB/sXfZpzg==",
+  "dgSpecHash": "P2gZV++H9VIndSMEG73UZThgaxtx+/1ku0TMjbHJ1koIGiXNlSssMPE6Vjmu8UcxFR2a2Bu0W7ZfCGBL4x9oYg==",
   "success": true,
-  "projectFilePath": "D:\\DULIEUHOCTAP\\ki6\\CongNghePM\\ChuaDoAn\\doancuoiapi\\api\\apisanpham\\apisanpham.csproj",
+  "projectFilePath": "D:\\ltw\\api_sanpham\\api\\apisanpham\\apisanpham.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.16\\microsoft.aspnetcore.jsonpatch.5.0.16.nupkg.sha512",

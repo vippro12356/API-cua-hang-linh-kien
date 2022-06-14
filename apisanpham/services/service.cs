@@ -10,7 +10,7 @@ using MongoDB.Bson;
 using System.Net.Mail;
 using System.Net;
 using System.Data;
-
+using System.Text.RegularExpressions;
 namespace apisanpham.services
 {
     public class service:connect
@@ -19,6 +19,21 @@ namespace apisanpham.services
         public service()
         {
             
+        }
+        static Regex ValidEmailRegex = CreateValidEmailRegex();
+        private static Regex CreateValidEmailRegex()
+        {
+            string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
+                + @"([-a-z0-9!#$%&'*+/=?^_`{|}~]|(?<!\.)\.)*)(?<!\.)"
+                + @"@[a-z0-9][\w\.-]*[a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+
+            return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
+        }
+        internal static bool EmailIsValid(string emailAddress)
+        {
+            bool isValid = ValidEmailRegex.IsMatch(emailAddress);
+
+            return isValid;
         }
         public List<sanpham> listsanpham()
         {
@@ -143,29 +158,43 @@ namespace apisanpham.services
         }
         public void sendemail(string emailaddress)
         {
-            SmtpClient client = new SmtpClient()
+            if(emailaddress.Length==0)
             {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential()
+
+            }
+            else
+            {
+                if(EmailIsValid(emailaddress))
                 {
-                    UserName = "cowsepmy147@gmail.com",
-                    Password= "lfmfzqcuegcgzszl"
+                    SmtpClient client = new SmtpClient()
+                    {
+                        Host = "smtp.gmail.com",
+                        Port = 587,
+                        EnableSsl = true,
+                        DeliveryMethod = SmtpDeliveryMethod.Network,
+                        UseDefaultCredentials = false,
+                        Credentials = new NetworkCredential()
+                        {
+                            UserName = "cowsepmy147@gmail.com",
+                            Password = "lfmfzqcuegcgzszl"
+                        }
+                    };
+                    MailAddress fromemail = new MailAddress("cowsepmy147@gmail.com", "Đỗ Ngọc Sơn");
+                    MailAddress toemail = new MailAddress(emailaddress, "someone");
+                    MailMessage mess = new MailMessage()
+                    {
+                        From = fromemail,
+                        Subject = "chúc mừng bạn đặt hàng thành công",
+                        Body = "đặt thành công",
+                    };
+                    mess.To.Add(toemail);
+                    client.Send(mess);
                 }
-            };
-            MailAddress from = new MailAddress("cowsepmy147@gmail.com", "Đỗ Ngọc Sơn");
-            MailAddress to = new MailAddress(emailaddress, "someone");
-            MailMessage mess = new MailMessage()
-            {
-                From = from,
-                Subject = "chúc mừng bạn đặt hàng thành công",
-                Body = "đặt thành công",
-            };
-            mess.To.Add(to);
-            client.Send(mess);
+                else
+                {
+
+                }
+            }
         }
     }
 }
