@@ -175,11 +175,11 @@ namespace apisanpham.services
                         UseDefaultCredentials = false,
                         Credentials = new NetworkCredential()
                         {
-                            UserName = "cowsepmy147@gmail.com",
-                            Password = "lfmfzqcuegcgzszl"
+                            UserName = "ngocsonmmt789@gmail.com",
+                            Password = "nkstprnqpmijnccs"
                         }
                     };
-                    MailAddress fromemail = new MailAddress("cowsepmy147@gmail.com", "Đỗ Ngọc Sơn");
+                    MailAddress fromemail = new MailAddress("ngocsonmmt789@gmail.com", "Nhóm 4 Quản Lý Cửa Hàng Linh Kiện Máy Tính");
                     MailAddress toemail = new MailAddress(emailaddress, "someone");
                     MailMessage mess = new MailMessage()
                     {
